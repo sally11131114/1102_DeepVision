@@ -106,7 +106,10 @@ class ImageFolderDataset(Dataset):
         #     image_transformed = self.transform(image)                        #
         ########################################################################
         data_dict = dict()
-        data_dict["image"] = self.transform(self.load_image_as_numpy(self.images[index]))
+        if(self.transform):
+            data_dict["image"] = self.transform(self.load_image_as_numpy(self.images[index]))
+        else:
+            data_dict["image"] = self.load_image_as_numpy(self.images[index])
         data_dict["label"] = self.labels[index]
 
         ########################################################################
