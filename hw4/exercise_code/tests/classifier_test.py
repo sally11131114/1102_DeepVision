@@ -119,7 +119,6 @@ class ClassifierBackwardTest(UnitTest):
         return "Classifier Backward incorrect. \nExpected: " + \
             str(self.truth) + " \nEvaluated: " + str(self.value)
 
-
 class SigmoidMethodTest(MethodTest):
     def define_tests(self, Classifier):
         return [Sigmoid_Of_Zero(Classifier),

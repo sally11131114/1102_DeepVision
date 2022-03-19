@@ -53,8 +53,8 @@ class Classifier(Network):
         # that you need to implement the function self.sigmoid() for that      #
         ########################################################################
 
-
-        pass
+        scores = X.dot(self.W)
+        y = self.sigmoid(scores)
 
         ########################################################################
         #                           END OF YOUR CODE                           #
@@ -80,8 +80,9 @@ class Classifier(Network):
         # expressed by sigmoid itself                                          #
         ########################################################################
 
-
-        pass
+        dW = (1- y) * y*1
+        dW = self.cache*dW
+        #dW = np.dot(np.transpose(self.cache), dW)
 
         ########################################################################
         #                           END OF YOUR CODE                           #
@@ -103,8 +104,7 @@ class Classifier(Network):
         # Implement the sigmoid function, return out                           #
         ########################################################################
 
-
-        pass
+        out = 1/(1+np.exp(-1*x))
 
         ########################################################################
         #                           END OF YOUR CODE                           #
