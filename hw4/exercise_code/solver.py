@@ -1,3 +1,4 @@
+from turtle import forward
 import numpy as np
 
 
@@ -102,7 +103,12 @@ class Solver(object):
         ########################################################################
 
 
-        pass
+        model.train()
+        model_forward, model_backward = model(X_train)
+        loss, loss_grad = loss_func(model_forward, y_train)
+        grad = loss_grad*model_backward
+        grad = np.mean(grad, 0, keepdims = True)
+        opt.step(grad.T)
 
         ########################################################################
         #                           END OF YOUR CODE                           #
