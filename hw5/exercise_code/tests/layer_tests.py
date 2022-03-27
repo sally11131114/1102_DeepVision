@@ -86,6 +86,7 @@ class AffineBackwardTestDw(UnitTest):
         return self.error < 1e-7
 
     def define_failure_message(self):
+        #print('self.truth w', self.truth.shape, '\n', self.truth)
         return "Affine backward wrt w incorrect. Expected: < 1e-7 Evaluated: " + str(self.error)
 
 

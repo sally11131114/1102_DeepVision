@@ -113,7 +113,8 @@ def affine_forward(x, w, b):
     # You will need to reshape the input into rows.                        #
     ########################################################################
 
-    pass
+    temp = x.reshape(N, -1)
+    out = temp.dot(w)+b
 
     ########################################################################
     #                           END OF YOUR CODE                           #
@@ -142,8 +143,15 @@ def affine_backward(dout, cache):
     # Hint: Don't forget to average the gradients dw and db                #
     ########################################################################
 
-    pass
+    #dout N*M
+    dx = np.dot(dout, w.T)
+    dx = dx.reshape(x.shape)
+    temp = x.reshape(x.shape[0], -1)
+    dw = np.dot(temp.transpose(), dout)
+    db = np.sum(dout, axis=0)
 
+    dw /=x.shape[0]
+    db /=x.shape[0]
     ########################################################################
     #                           END OF YOUR CODE                           #
     ########################################################################
