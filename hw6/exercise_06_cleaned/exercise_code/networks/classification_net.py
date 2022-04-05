@@ -180,7 +180,7 @@ class MyOwnNetwork(ClassificationNet):
         ########################################################################
         # TODO:  Your initialization here                                      #
         ########################################################################
-        self.activation = Relu()
+        self.activation = LeakyRelu()
         self.reg_strength = reg
 
         self.cache = None
