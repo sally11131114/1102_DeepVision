@@ -85,7 +85,7 @@ class Solver(object):
 
         self.num_operation = 0
         self.current_patience = 0
-
+        
     def _step(self, X, y, validation=False):
         """
         Make a single gradient update. This is called by train() and should not
