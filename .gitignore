@@ -1,7 +1,6 @@
 **/__pycache__/
 **/.ipynb_checkpoints/
 **/datasets/
-**/data/
 **/.tmp/
 **/models/
 **/cifar-10-batches-py/
