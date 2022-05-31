@@ -13,7 +13,6 @@ class KeypointModel(pl.LightningModule):
             arguments), otherwise it might not work on the submission server
         """
         #super(KeypointModel, self).__init__()
-        super().__init__()
         self.hparams.update(hparams)
         ########################################################################
         # TODO: Define all the layers of your CNN, the only requirements are:  #
